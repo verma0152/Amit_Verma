@@ -31,7 +31,7 @@ header .container {
 .profile-img {
     width: 150px; /* Adjusted size */
     height: 150px;
-    border-radius: 50%;
+    border-radius: 65%;
     margin-bottom: 20px;
     object-fit: cover; /* Ensure image fills the circle */
 }
