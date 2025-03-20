@@ -165,11 +165,11 @@
             <section id="skills">
                 <h2>Skills</h2>
                 <ul class="skills-list">
-                    <li class="skill-item">Programming Languages: C, C++, Java, Python</li>
-                    <li class="skill-item">Web Technologies: HTML, CSS, JavaScript</li>
-                    <li class="skill-item">Databases: MySQL, Oracle</li>
-                    <li class="skill-item">Operating Systems: Windows, Linux</li>
-                    <li class="skill-item">Other Skills: Data Mining, Machine Learning, Network Security</li>
+                    <li>Programming Languages: C, C++, Java, Python</li>
+                    <li>Web Technologies: HTML, CSS, JavaScript</li>
+                    <li>Databases: MySQL, Oracle</li>
+                    <li>Operating Systems: Windows, Linux</li>
+                    <li>Other Skills: Data Mining, Machine Learning, Network Security</li>
                 </ul>
             </section>
 
@@ -213,7 +213,13 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            if (!location.hash) {
+                location.hash = '#qualifications';
+            }
+        });
+    </script>
 </body>
 
 </html>
