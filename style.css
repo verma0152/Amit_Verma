@@ -1,321 +1,177 @@
-/* General Styles */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #1e3d59;
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+}
+
 body {
-    font-family: 'Poppins', sans-serif; /* Changed to Poppins for a more modern look */
-    margin: 0;
-    padding: 0;
-    color: #444; /* Slightly softer text color */
-    background-color: #f8f8f8; /* Lighter background */
-    line-height: 1.6; /* Improved line height for readability */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
-/* Header Styles */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
 header {
-    background-color: #fff; /* White header background */
-    padding: 50px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
 }
 
 header .container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center the content */
-    flex-direction: column; /* Stack image and text */
+    text-align: center;
 }
 
 .profile-img {
-    width: 150px; /* Adjusted size */
-    height: 150px;
-    border-radius: 65%;
-    margin-bottom: 20px;
-    object-fit: cover; /* Ensure image fills the circle */
-}
-
-header h1 {
-    font-size: 2.5em; /* Larger heading */
-    color: #2c3e50; /* Darker heading color */
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
     margin-bottom: 10px;
-    font-weight: 600; /* Semi-bold */
 }
 
-header p.position {
-    font-size: 1.1em;
-    color: #6c757d; /* Muted position text */
+@media (min-width: 768px) {
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+    }
 }
 
-/* Navigation Styles */
-nav.top-nav,
-nav.bottom-nav {
-    background-color: #ff8c00; /* Orange navigation */
-    padding: 10px 0;
+@media (max-width: 767px) {
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+}
+
+.top-nav, .bottom-nav {
+    background-color: var(--secondary-color);
+}
+
+.top-nav .container, .bottom-nav .container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+    padding: 10px 0;
 }
 
-nav a {
-    color: #fff;
+.top-nav a, .bottom-nav a {
+    color: white;
     text-decoration: none;
-    padding: 10px 15px; /* Adjusted padding */
-    margin: 5px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
-    font-weight: 500; /* Semi-bold nav links */
+    margin: 0 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
 }
 
-nav a:hover {
-    background-color: #e67e22; /* Darker orange on hover */
-    color: #fff;
-}
-
-/* Main Styles */
-main {
-    padding: 40px 0;
+.top-nav a:hover, .bottom-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 section {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow */
-    margin-bottom: 30px;
+    padding: 40px 0;
 }
 
 section h2 {
-    font-size: 2em;
-    color: #ff8c00; /* Orange heading */
-    border-bottom: 3px solid #f39c12; /* Stronger border */
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Qualifications Section */
-.qualifications-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 20px;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.qualification-item {
-    padding: 20px;
-    border: 1px solid #ddd; /* Light border for each item */
-    border-radius: 8px;
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
-.qualification-item dt {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 5px;
-    color: #333;
+@media (max-width: 768px) {
+    .top-nav .container, .bottom-nav .container {
+        flex-direction: column;
+    }
+    .top-nav a, .bottom-nav a {
+        margin: 5px 0;
+    }
 }
 
-.qualification-item dd {
-    margin-left: 0; /* Reset default margin */
-    font-size: 1em;
-    color: #555;
+.publications-list, .patents-list, .skills-list {
+    list-style: none;
+    padding: 0;
 }
 
-.qualification-item .university {
-    font-style: italic;
+.publications-list li, .patents-list li, .skills-list li {
+    margin-bottom: 10px;
 }
 
-.qualification-item .year {
-    font-weight: 500;
-}
-
-.qualification-item .cgpa,
-.qualification-item .percentage {
+.qualifications-list dt {
     font-weight: bold;
-    color: #e67e22; /* Highlight color */
+    margin-top: 15px;
 }
 
-/* Work Experience Section */
-.work-experience-list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+.qualifications-list dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
 .work-experience-item {
-    padding: 20px;
-    border-bottom: 1px solid #eee; /* Light dividers */
-}
-
-.work-experience-item:last-child {
-    border-bottom: none;
+    margin-bottom: 20px;
 }
 
 .work-experience-item h3 {
-    font-size: 1.3em;
-    font-weight: 600;
     margin-bottom: 5px;
-    color: #2c3e50;
 }
 
-.work-experience-item .institution {
-    font-style: italic;
-    color: #777;
+.work-experience-item p {
+    margin: 5px 0;
 }
 
-.work-experience-item .duration {
-    font-size: 0.9em;
-    color: #888;
-    margin-bottom: 10px;
-}
-
-.work-experience-item .responsibilities {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-/* Publications Section */
-.publications-section h3 {
-    font-size: 1.4em;
-    color: #ff8c00;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-weight: 600;
-}
-
-.publications-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.publication-item {
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.publication-item:last-child {
-    border-bottom: none;
+.work-experience-item ul {
+    margin-top: 5px;
+    padding-left: 20px;
 }
 
 .publication-title {
-    font-weight: 500;
-    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .publication-details {
-    font-size: 0.9em;
-    color: #777;
+    font-style: italic;
 }
 
 .impact-factor {
-    font-size: 0.9em;
-    font-style: italic;
-    color: #888;
-}
-
-/* Books & Patents Section */
-.books-patents-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.books-patents-item {
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.books-patents-item h3 {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.patents-list {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.patent-item {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.patent-item:last-child {
-    border-bottom: none;
-}
-
-.patent-title {
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.patent-details {
-    font-size: 0.9em;
-    color: #777;
-}
-
-/* Skills Section */
-.skills-list {
-    list-style-type: disc;
-    margin-left: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Skills in a grid */
-    gap: 5px;
-}
-
-/* About Section */
-.about-content {
-    font-size: 1.1em;
-    color: #555;
-}
-
-/* Contact Section */
-.contact-content {
-    font-size: 1.1em;
-    color: #555;
+    font-size: 0.9rem;
 }
 
 .contact-content a {
-    color: #e67e22;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 .contact-content a:hover {
     text-decoration: underline;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #343a40; /* Darker footer */
-    padding: 20px 0;
-    text-align: center;
-    color: #fff;
-    font-size: 0.9em;
-}
-
-footer .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#footer-contact p {
-    margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header .container {
-        text-align: center;
-    }
-
-    nav.top-nav .container,
-    nav.bottom-nav .container {
-        flex-direction: column;
-        align-items: center;
-    }
 }
