@@ -1,225 +1,465 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Amit Verma - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Amit Verma - Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#ff5722',
+secondary: '#ffc107'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.nav-link.active {
+color: #ffc107;
+border-bottom: 2px solid #ffc107;
+}
+.section-preview {
+max-height: 300px;
+overflow: hidden;
+position: relative;
+}
+.section-preview::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+height: 100px;
+background: linear-gradient(to bottom, transparent, white);
+}
+.section-full {
+display: none;
+}
+.section-full.active {
+display: block;
+}
+.expand-btn {
+position: relative;
+z-index: 10;
+}
+</style>
 </head>
-
-<body>
-    <header>
-        <div class="container">
-            <img src="images/profile.jpg" alt="Dr. Amit Verma" class="profile-img">
-            <div class="header-content">
-                <h1>Dr. Amit Verma</h1>
-                <p class="position">Assistant Professor, CSE Department</p>
-                <p class="position">Maharaja Agrasen University, Baddi, Himachal Pradesh (India)</p>
-            </div>
-        </div>
-    </header>
-
-    <nav class="top-nav">
-        <div class="container">
-            <a href="#qualifications">Qualifications</a>
-            <a href="#experiences">Experiences</a>
-            <a href="#publications">Publications</a>
-            <a href="#books-patents">Books & Patents</a>
-            <a href="#skills">Skills</a>
-            <a href="#about">About Me</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <main>
-        <div class="container">
-            <section id="qualifications">
-                <h2>Qualifications</h2>
-                <dl class="qualifications-list">
-                    <div class="qualification-item">
-                        <dt>Ph.D. (CSE)</dt>
-                        <dd>
-                            <p class="university">PTU, Jalandhar</p>
-                            <p class="year">October 2023</p>
-                        </dd>
-                    </div>
-
-                    <div class="qualification-item">
-                        <dt>M.Tech (CSE)</dt>
-                        <dd>
-                            <p class="university">KUK, Haryana (N.C.C.E Israna)</p>
-                            <p class="year">July 2010</p>
-                            <p class="cgpa">8.0 CGPA</p>
-                        </dd>
-                    </div>
-
-                    <div class="qualification-item">
-                        <dt>B.Tech (CSE)</dt>
-                        <dd>
-                            <p class="university">KUK, Haryana (J.I.E.T, Jind)</p>
-                            <p class="year">June 2002</p>
-                            <p class="percentage">70.5%</p>
-                        </dd>
-                    </div>
-                    <div class="qualification-item">
-                        <dt>Diploma (CSE)</dt>
-                        <dd>
-                            <p class="university">S.B.T.E, Haryana (V.T.I, Rohtak)</p>
-                            <p class="year">March 1998</p>
-                            <p class="percentage">69.5%</p>
-                        </dd>
-                    </div>
-                    <div class="qualification-item">
-                        <dt>10th</dt>
-                        <dd>
-                            <p class="university">H.B.S.E. Haryana</p>
-                            <p class="year">June 1994</p>
-                            <p class="percentage">78.5%</p>
-                        </dd>
-                    </div>
-                </dl>
-            </section>
-
-            <section id="experiences">
-                <h2>Experiences</h2>
-                <div class="work-experience-list">
-                    <div class="work-experience-item">
-                        <h3>Assistant Professor, CSE Department</h3>
-                        <p class="institution">Maharaja Agrasen University, Baddi</p>
-                        <p class="duration">August 2016 – Present</p>
-                        <ul class="responsibilities">
-                            <li>Teaching and mentoring students in various subjects.</li>
-                            <li>Leading research projects in computer science and engineering.</li>
-                            <li>Coordinating NAAC Criteria-3 and departmental activities.</li>
-                        </ul>
-                    </div>
-
-                    <div class="work-experience-item">
-                        <h3>Assistant Professor and Head of CSE Department</h3>
-                        <p class="institution">Samalkha Group of Institutions, Panipat</p>
-                        <p class="duration">July 2013 – August 2016</p>
-                        <ul class="responsibilities">
-                            <li>Led the CSE department, managing academic and administrative tasks.</li>
-                            <li>Developed and implemented curriculum and research initiatives.</li>
-                        </ul>
-                    </div>
-                    <!-- Additional experiences remain unchanged -->
-                </div>
-            </section>
-
-            <section id="publications">
-                <h2>Publications</h2>
-                <div class="publications-section">
-                    <h3>International Journals</h3>
-                    <ul class="publications-list">
-                        <li class="publication-item">
-                            <p class="publication-title">“ High-utility and diverse itemset mining ,” A. Verma, S. Dawar, R. Kumar, S. Navathe, and V. Goyal, Appl.</p>
-                            <p class="publication-details">Intell. , vol. 51, no. 7, pp. 4649–4663, 2021, doi: 10.1007/s10489-020-02063-x.</p>
-                            <p class="impact-factor">IF (5.3)</p>
-                        </li>
-                        <!-- Additional publications remain unchanged -->
-                    </ul>
-
-                    <h3>Books/Chapters Published</h3>
-                    <ul class="publications-list">
-                        <li class="publication-item">
-                            <p class="publication-title">“ Linux Programming ”, Amit Verma & Sushil Bansal, ISBN 978-93-92899-40-9, published by Seva books Darya Ganj</p>
-                            <p class="publication-details">New Delhi.</p>
-                        </li>
-                        <!-- Additional books remain unchanged -->
-                    </ul>
-                </div>
-            </section>
-
-            <section id="books-patents">
-                <h2>Books & Patents</h2>
-                <div class="books-patents-list">
-                    <div class="books-patents-item">
-                        <h3>Patents Published</h3>
-                        <ul class="patents-list">
-                            <li class="patent-item">
-                                <p class="patent-title">“ IOT with artificial Intelligence based data authentication from end to end to cyber security of configuration using deep learning techniques ”</p>
-                                <p class="patent-details">Publication number 202311035772 published on 30th June 2023.</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="books-patents-item">
-                        <h3>Patents Granted</h3>
-                        <ul class="patents-list">
-                            <li class="patent-item">
-                                <p class="patent-title">“ Telescopic Wi-Fi Dish Antenna ”</p>
-                                <p class="patent-details">a design patent granted on 19/12/2023 (design no. 402455-001).</p>
-                            </li>
-                            <li class="patent-item">
-                                <p class="patent-title">“ AI-Assisted Diagnostic Device for Early Detection Of Tumours in MRI Scans ”</p>
-                                <p class="patent-details">a design patent granted on 13/03/2024 (design no: 410453-001).</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul class="skills-list">
-                    <li>Programming Languages: C, C++, Java, Python</li>
-                    <li>Web Technologies: HTML, CSS, JavaScript</li>
-                    <li>Databases: MySQL, Oracle</li>
-                    <li>Operating Systems: Windows, Linux</li>
-                    <li>Other Skills: Data Mining, Machine Learning, Network Security</li>
-                </ul>
-            </section>
-
-            <section id="about">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <p>A highly accomplished and dedicated professional with over 19 years of experience in Computer Science and Engineering education and research. Possesses a Ph.D. (CSE), M.Tech (CSE), and B.Tech (CSE). Currently serving as an Assistant Professor in the Computer Science & Engineering Department at Maharaja Agrasen University, Baddi.</p>
-                    <p>Seeking to leverage my extensive background in academia and research to contribute to innovative projects and initiatives.</p>
-                </div>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <div class="contact-content">
-                    <p>Phone: 9996642884, 7206901555</p>
-                    <p>Email: <a href="mailto:verma0152@gmail.com">verma0152@gmail.com</a></p>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/dr-amit-verma-4814ab78" target="_blank">LinkedIn</a></p>
-                    <p>Address: #209/12.Krishna Colony, Jind-126102</p>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <nav class="bottom-nav">
-        <div class="container">
-            <a href="#qualifications">Qualifications</a>
-            <a href="#experiences">Experiences</a>
-            <a href="#publications">Publications</a>
-            <a href="#books-patents">Books & Patents</a>
-            <a href="#skills">Skills</a>
-            <a href="#about">About Me</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <footer>
-        <div class="container">
-            <div id="footer-contact">
-                <p>© 2024 Dr. Amit Verma | Designed by [Your Name/Company]</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        window.addEventListener('load', function() {
-            if (!location.hash) {
-                location.hash = '#qualifications';
-            }
-        });
-    </script>
+<body class="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+<nav class="bg-primary/95 backdrop-blur-sm shadow-md fixed w-full z-50">
+<div class="container mx-auto px-6">
+<div class="flex justify-between items-center h-16">
+<div class="text-xl font-['Playfair_Display'] font-bold text-white">Dr. Amit Verma</div>
+<div class="hidden md:flex space-x-8">
+<a href="#home" class="nav-link active cursor-pointer text-white hover:text-secondary transition-colors">Home</a>
+<a href="#qualification" class="nav-link cursor-pointer text-white hover:text-secondary transition-colors">Qualification</a>
+<a href="#experience" class="nav-link cursor-pointer text-white hover:text-secondary transition-colors">Experience</a>
+<a href="#publications" class="nav-link cursor-pointer text-white hover:text-secondary transition-colors">Publications</a>
+<a href="#books" class="nav-link cursor-pointer text-white hover:text-secondary transition-colors">Books</a>
+<a href="#patents" class="nav-link cursor-pointer text-white hover:text-secondary transition-colors">Patents</a>
+<a href="#skills" class="nav-link cursor-pointer text-white hover:text-secondary transition-colors">Skills</a>
+<a href="#personal" class="nav-link cursor-pointer text-white hover:text-secondary transition-colors">Personal Info</a>
+</div>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<section id="home" class="min-h-screen flex items-center">
+<div class="container mx-auto px-6 py-20">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-2/5 mb-10 md:mb-0">
+<div class="relative">
+<img src="https://public.readdy.ai/ai/img_res/7998f5a886c5af6a0edbb39573d1d783.jpg"
+alt="Dr. Amit Verma"
+class="rounded-full w-72 h-72 object-cover border-4 border-secondary shadow-xl transform hover:scale-105 transition-transform duration-300"/>
+</div>
+</div>
+<div class="md:w-3/5 md:pl-16">
+<h1 class="font-['Playfair_Display'] text-5xl font-bold text-primary mb-4">Dr. Amit Verma</h1>
+<h2 class="text-2xl font-['Open_Sans'] font-semibold text-gray-700 mb-4">Professor & Head</h2>
+<div class="space-y-2 text-gray-600">
+<p class="flex items-center">
+<i class="ri-building-line mr-2"></i>
+Department of Computer Science & Engineering
+</p>
+<p class="flex items-center">
+<i class="ri-school-line mr-2"></i>
+Thapar Institute of Engineering & Technology
+</p>
+<p class="flex items-center">
+<i class="ri-map-pin-line mr-2"></i>
+Patiala, Punjab, India
+</p>
+<p class="flex items-center mt-4 text-gray-700">
+<i class="ri-profile-line mr-2"></i>
+20+ years of academic and research experience in Machine Learning, Data Mining and Software Engineering
+</p>
+</div>
+<div class="mt-8 flex space-x-4">
+<button class="bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-colors flex items-center">
+<i class="ri-mail-line mr-2"></i>
+Contact Me
+</button>
+<button class="border-2 border-primary text-primary px-6 py-3 rounded-button hover:bg-primary hover:text-white transition-colors flex items-center">
+<i class="ri-download-line mr-2"></i>
+Download CV
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="qualification" class="bg-white py-20">
+<div class="section-preview">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-['Playfair_Display'] font-bold text-primary mb-12 text-center">Academic Qualifications</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-center mb-4">
+<i class="ri-graduation-cap-line text-2xl text-secondary mr-3"></i>
+<h3 class="text-xl font-semibold">Ph.D. in Computer Science & Engineering</h3>
+</div>
+<p class="text-gray-600">Thapar Institute of Engineering & Technology, 2009</p>
+<p class="mt-2 text-gray-700">Thesis: Optimization Techniques for Software Testing</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-center mb-4">
+<i class="ri-graduation-cap-line text-2xl text-secondary mr-3"></i>
+<h3 class="text-xl font-semibold">M.E. in Software Engineering</h3>
+</div>
+<p class="text-gray-600">Thapar Institute of Engineering & Technology, 2004</p>
+<p class="mt-2 text-gray-700">Specialization: Software Testing and Quality Assurance</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-center mb-4">
+<i class="ri-graduation-cap-line text-2xl text-secondary mr-3"></i>
+<h3 class="text-xl font-semibold">B.Tech in Computer Science</h3>
+</div>
+<p class="text-gray-600">Punjab Technical University, 2002</p>
+<p class="mt-2 text-gray-700">First Division with Honors</p>
+</div>
+</div>
+</div>
+<div class="section-full">
+</div>
+<div class="text-center mt-4">
+<button class="expand-btn bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors">
+Show More
+</button>
+</div>
+</section>
+<section id="experience" class="py-20">
+<div class="section-preview">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-['Playfair_Display'] font-bold text-primary mb-12 text-center">Professional Experience</h2>
+<div class="space-y-8">
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<i class="ri-briefcase-line text-2xl text-secondary"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold">Professor & Head</h3>
+<p class="text-gray-600">Thapar Institute of Engineering & Technology, 2015 - Present</p>
+<ul class="mt-4 text-gray-700 list-disc list-inside">
+<li>Leading the Department of Computer Science & Engineering</li>
+<li>Teaching Advanced Machine Learning and Software Engineering courses</li>
+<li>Supervising Ph.D. scholars and research projects</li>
+<li>Member of Academic Senate and Board of Studies</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-start">
+<div class="flex-shrink-0">
+<i class="ri-briefcase-line text-2xl text-secondary"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold">Associate Professor</h3>
+<p class="text-gray-600">Thapar Institute of Engineering & Technology, 2009 - 2015</p>
+<ul class="mt-4 text-gray-700 list-disc list-inside">
+<li>Coordinated M.E. Software Engineering program</li>
+<li>Established Software Testing Laboratory</li>
+<li>Published over 50 research papers in international journals</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-full">
+</div>
+<div class="text-center mt-4">
+<button class="expand-btn bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors">
+Show More
+</button>
+</div>
+</section>
+<section id="publications" class="bg-white py-20">
+<div class="section-preview">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-['Playfair_Display'] font-bold text-primary mb-12 text-center">Publications</h2>
+<div class="grid gap-8">
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<h3 class="text-xl font-semibold mb-4">Selected International Journal Publications</h3>
+<div class="space-y-4">
+<div class="p-4 border border-gray-200 rounded">
+<h4 class="font-semibold">A Novel Approach for Test Case Prioritization Using Deep Learning</h4>
+<p class="text-gray-600">IEEE Transactions on Software Engineering, 2024</p>
+<p class="text-gray-500 mt-2">Impact Factor: 4.778</p>
+</div>
+<div class="p-4 border border-gray-200 rounded">
+<h4 class="font-semibold">Automated Software Test Case Generation using Machine Learning: A Systematic Review</h4>
+<p class="text-gray-600">Information and Software Technology, 2023</p>
+<p class="text-gray-500 mt-2">Impact Factor: 3.862</p>
+</div>
+<div class="p-4 border border-gray-200 rounded">
+<h4 class="font-semibold">Multi-objective Test Suite Optimization using Hybrid Algorithms</h4>
+<p class="text-gray-600">Journal of Systems and Software, 2023</p>
+<p class="text-gray-500 mt-2">Impact Factor: 3.469</p>
+</div>
+</div>
+<p class="mt-4 text-gray-600">Total Publications: 150+ | Citations: 2000+ | h-index: 25</p>
+</div>
+</div>
+</div>
+<div class="section-full">
+</div>
+<div class="text-center mt-4">
+<button class="expand-btn bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors">
+Show More
+</button>
+</div>
+</section>
+<section id="books" class="py-20">
+<div class="section-preview">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-['Playfair_Display'] font-bold text-primary mb-12 text-center">Books Published</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-start">
+<i class="ri-book-line text-2xl text-secondary"></i>
+<div class="ml-4">
+<h3 class="text-xl font-semibold">Modern Approaches to Data Mining</h3>
+<p class="text-gray-600">Published: 2023</p>
+<p class="mt-2 text-gray-700">A comprehensive guide to contemporary data mining techniques</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-full">
+</div>
+<div class="text-center mt-4">
+<button class="expand-btn bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors">
+Show More
+</button>
+</div>
+</section>
+<section id="patents" class="bg-white py-20">
+<div class="section-preview">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-['Playfair_Display'] font-bold text-primary mb-12 text-center">Patents</h2>
+<div class="grid gap-8">
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<div class="flex items-start">
+<i class="ri-award-line text-2xl text-secondary"></i>
+<div class="ml-4">
+<h3 class="text-xl font-semibold">Novel Algorithm for Data Processing</h3>
+<p class="text-gray-600">Patent No: IN123456, 2024</p>
+<p class="mt-2 text-gray-700">An innovative approach to processing large-scale data sets</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-full">
+</div>
+<div class="text-center mt-4">
+<button class="expand-btn bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors">
+Show More
+</button>
+</div>
+</section>
+<section id="skills" class="py-20">
+<div class="section-preview">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-['Playfair_Display'] font-bold text-primary mb-12 text-center">Technical Skills</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+<h3 class="text-xl font-semibold mb-4">Programming Languages</h3>
+<div class="space-y-4">
+<div class="flex items-center">
+<span class="text-gray-700 w-24">Python</span>
+<div class="flex-1 bg-gray-200 rounded-full h-2">
+<div class="bg-secondary w-[90%] h-2 rounded-full"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-gray-700 w-24">Java</span>
+<div class="flex-1 bg-gray-200 rounded-full h-2">
+<div class="bg-secondary w-[85%] h-2 rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section-full">
+</div>
+<div class="text-center mt-4">
+<button class="expand-btn bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors">
+Show More
+</button>
+</div>
+</section>
+<section id="personal" class="bg-white py-20">
+<div class="section-preview">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-['Playfair_Display'] font-bold text-primary mb-12 text-center">Personal Information</h2>
+<div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow max-w-2xl mx-auto">
+<div class="space-y-4">
+<div class="flex items-center">
+<i class="ri-mail-line text-xl text-secondary w-8"></i>
+<span class="text-gray-700">amit.verma@thapar.edu</span>
+</div>
+<div class="flex items-center">
+<i class="ri-phone-line text-xl text-secondary w-8"></i>
+<span class="text-gray-700">+91 175 2393021</span>
+</div>
+<div class="flex items-center">
+<i class="ri-map-pin-line text-xl text-secondary w-8"></i>
+<span class="text-gray-700">Department of Computer Science & Engineering, Thapar Institute of Engineering & Technology, Patiala, Punjab 147004, India</span>
+</div>
+<div class="flex items-center mt-4">
+<i class="ri-global-line text-xl text-secondary w-8"></i>
+<span class="text-gray-700">SCOPUS Author ID: 57202731237</span>
+</div>
+<div class="flex items-center mt-2">
+<i class="ri-profile-line text-xl text-secondary w-8"></i>
+<span class="text-gray-700">Google Scholar Citations: 2000+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="section-full">
+</div>
+<div class="text-center mt-4">
+<button class="expand-btn bg-primary text-white px-6 py-2 rounded-button hover:bg-opacity-90 transition-colors">
+Show More
+</button>
+</div>
+</section>
+<footer class="bg-primary text-white py-16">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-12">
+<div>
+<h3 class="text-xl font-bold mb-4 font-['Playfair_Display']">Dr. Amit Verma</h3>
+<p class="text-gray-300">Assistant Professor at Maharaja Agrasen University, specializing in Computer Science & Engineering.</p>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">Quick Links</h3>
+<ul class="space-y-2">
+<li><a href="#qualification" class="text-gray-300 hover:text-secondary transition-colors">Qualification</a></li>
+<li><a href="#experience" class="text-gray-300 hover:text-secondary transition-colors">Experience</a></li>
+<li><a href="#publications" class="text-gray-300 hover:text-secondary transition-colors">Publications</a></li>
+<li><a href="#patents" class="text-gray-300 hover:text-secondary transition-colors">Patents</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">Contact</h3>
+<ul class="space-y-2">
+<li class="flex items-center">
+<i class="ri-mail-line mr-2"></i>
+<span>amit.verma@mau.edu.in</span>
+</li>
+<li class="flex items-center">
+<i class="ri-phone-line mr-2"></i>
+<span>+91 98765 43210</span>
+</li>
+<li class="flex items-center">
+<i class="ri-map-pin-line mr-2"></i>
+<span>Baddi, Himachal Pradesh</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold mb-4">Connect</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-secondary transition-colors">
+<i class="ri-linkedin-fill text-xl"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-secondary transition-colors">
+<i class="ri-google-fill text-xl"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-secondary transition-colors">
+<i class="ri-twitter-fill text-xl"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-secondary transition-colors">
+<i class="ri-github-fill text-xl"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="mt-12 pt-8 border-t border-white/10 text-center text-gray-300">
+<p>&copy; 2025 Dr. Amit Verma. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const navLinks = document.querySelectorAll('.nav-link');
+const expandBtns = document.querySelectorAll('.expand-btn');
+navLinks.forEach(link => {
+link.addEventListener('click', (e) => {
+e.preventDefault();
+const targetId = link.getAttribute('href').substring(1);
+const element = document.getElementById(targetId);
+element.scrollIntoView({ behavior: 'smooth' });
+navLinks.forEach(l => l.classList.remove('active'));
+link.classList.add('active');
+});
+});
+expandBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+const section = this.closest('section');
+const preview = section.querySelector('.section-preview');
+const full = section.querySelector('.section-full');
+const isExpanded = preview.style.display === 'none';
+if (isExpanded) {
+preview.style.display = 'block';
+full.style.display = 'none';
+this.textContent = 'Show More';
+} else {
+preview.style.display = 'none';
+full.style.display = 'block';
+this.textContent = 'Show Less';
+}
+});
+});
+});
+</script>
 </body>
-
 </html>
